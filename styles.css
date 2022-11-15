@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient( #4A15EB, #815DEE);
+}
+
+h1 {
+    height: 80px;
+    background-color: #120538;
+    text-align: center;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 900;
+    padding-top: 32px;
+    color: white;
+}
+
+h2 {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 800;
+    padding-top: 30px;
+    color: white;
+}
+
+.bigContainer{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameChoiceContainer {
+    height: 250px;
+    padding: 60px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameChoiceContainer input{
+    height: 250px;
+    align-self: center;
+    padding: 0 25px;
+    transition: transform .2s;
+}
+
+.gameChoiceContainer input:hover{
+    transform: scale(1.25);
+}
+
+.computerSelecction {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    color: white;
+}
+
+.winner{
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 500;
+    padding-top: 15px;
+    color: white;
+}
+
+table, th, td{
+    margin: 30px 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.playerScore, .computerScore {
+    font-size: 28px;
+}
+
+.github-user{
+    display: flex;
+    align-items: center;
+  }
+  
+  .github-user img{
+    height: 30px;
+    margin-right: 10px;
+  }
+
+.github-user p a{
+    font-size: 16px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+  }
