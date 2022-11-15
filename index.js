@@ -1,4 +1,12 @@
-let getGamerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+/*
+1 - Iniciar un juego a a partir del primer click
+2 - agregar add event listener a las imagenes cuando haga click se llame a la funcion que genera el juego
+3 - Los parrafor de .computerSelection y .winner deben de decir la eleccion de la computadora y quien es el ganador respectivamente
+4 - Agregar al conteo de 5 rondas quien fue el ganador y cambiar el resultado en la tabla .playerScore .computerScore
+5 - al jugar 5 rondas en el parrafo de .winner debe decir quien fue el ganador de las ultimas 5 jugadas y reiniciar el conteo.
+*/ 
+
+let getGamerChoice;
 
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3);
@@ -31,6 +39,6 @@ function playRound(gamerChoice, computerChoice){
 
 function game(){
     for(let i=0; i<5; i++){
-        
+
     }
 }
