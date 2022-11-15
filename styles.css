@@ -10,13 +10,13 @@ body {
 }
 
 h1 {
-    height: 80px;
+    height:auto;
     background-color: #120538;
     text-align: center;
     font-size: 36px;
     font-style: italic;
     font-weight: 900;
-    padding-top: 32px;
+    padding: 32px 0px;
     color: white;
 }
 
@@ -102,4 +102,91 @@ table, th, td{
     margin: 0;
     text-align: center;
     text-decoration: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    h1{
+        font-size: 18px;
+        padding: 15px 0px;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 800;
+        padding-top: 30px;
+        color: white;
+    }
+
+    .bigContainer{
+        width: 90%;
+        height: 80%;
+        justify-content: space-around;
+    }
+
+    .gameChoiceContainer {
+        height: 200px;
+        padding: 20px 0px;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+    .gameChoiceContainer input{
+        height: 60px;
+        align-self: center;
+        padding: 10px 25px;
+    }
+
+    .computerSelecction {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    
+    .winner{
+        font-size: 16px;
+    }
+
+    table, th, td{
+        margin: 30px 0;
+        border: 1px solid white;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        width: 300px;
+        border-radius: 10px;
+    }
+    
+    .playerScore, .computerScore {
+        font-size: 16px;
+    }
+    
+    .github-user{
+        display: flex;
+        align-items: center;
+      }
+      
+      .github-user img{
+        height: 30px;
+        margin-right: 10px;
+      }
+    
+    .github-user p a{
+        font-size: 16px;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+        color: white;
+        margin: 0;
+        text-align: center;
+        text-decoration: none;
+      }
   }
