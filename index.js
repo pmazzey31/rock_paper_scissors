@@ -46,14 +46,18 @@ function handleClick(playerSelection){
         computerSelectionPar.textContent = "Computer chose " + computerSelection;
         if(result === "tie"){
             winnerPar.textContent = "It's a tie";
+            playerScorePar.textContent = playerWins;
+            computerScorePar.textContent = computerWins;
         } else if(result === "win"){
             winnerPar.textContent = "You win!";
             playerWins++;
             playerScorePar.textContent = playerWins;
+            computerScorePar.textContent = computerWins;
         } else if(result === "lose"){
             winnerPar.textContent = "You lose!";
             computerWins++;
             computerScorePar.textContent = computerWins;
+            playerScorePar.textContent = playerWins;
         }
 
         if(playerWins === 3) {
@@ -62,15 +66,11 @@ function handleClick(playerSelection){
             winnerPar.textContent = "YOU WIN! You are the winner of the 3 rounds game, click to start again";
             playerWins = 0;
             computerWins = 0;
-            computerScorePar.textContent = computerWins;
-            playerScorePar.textContent = playerWins;
         } else if(computerWins === 3) {
             computerScorePar.textContent = computerWins;
             playerScorePar.textContent = playerWins;
             winnerPar.textContent = "COMPUTER WINS! It is the winner of the 3 rounds game, click to start again";
             playerWins = 0;
             computerWins = 0;
-            computerScorePar.textContent = computerWins;
-            playerScorePar.textContent = playerWins;
     }
 }
