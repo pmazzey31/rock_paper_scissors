@@ -1,44 +1,76 @@
-/*
-1 - Iniciar un juego a a partir del primer click
-2 - agregar add event listener a las imagenes cuando haga click se llame a la funcion que genera el juego
-3 - Los parrafor de .computerSelection y .winner deben de decir la eleccion de la computadora y quien es el ganador respectivamente
-4 - Agregar al conteo de 5 rondas quien fue el ganador y cambiar el resultado en la tabla .playerScore .computerScore
-5 - al jugar 5 rondas en el parrafo de .winner debe decir quien fue el ganador de las ultimas 5 jugadas y reiniciar el conteo.
-*/ 
+const rockButton = document.getElementById('rockButton');
+const paperButton = document.getElementById('paperButton');
+const scissorsButton = document.getElementById('scissorsButton');
+const computerSelectionPar = document.getElementById('computerSelection');
+const winnerPar = document.getElementById('winner');
+const playerScorePar = document.getElementById('playerScore');
+const computerScorePar = document.getElementById('computerScore');
 
-let getGamerChoice;
+rockButton.addEventListener('click', () => handleClick('rock'));
+paperButton.addEventListener('click', () => handleClick('paper'));
+scissorsButton.addEventListener('click', () => handleClick('scissors'));
 
-function getComputerChoice(){
-    let random = Math.floor(Math.random() * 3);
-    if(random === 0){
-        return "rock";
-    } else if(random === 1){
-        return "paper";
-    } else if(random === 2){
-        return "scissors";
+let gameCount = 0;
+let playerWins = 0;
+let computerWins = 0;
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+      return "tie"
     }
+    if (
+      (playerSelection === 'rock' && computerSelection === 'scissors') ||
+      (playerSelection === 'scissors' && computerSelection === 'paper') ||
+      (playerSelection === 'paper' && computerSelection === 'rock')
+    ) {
+      return "win"
+    }
+    return "lose"
+  }
+
+function getRandomChoice() {
+  let randomNumber = Math.floor(Math.random() * 3)
+  switch (randomNumber) {
+    case 0:
+      return 'rock'
+    case 1:
+      return 'paper'
+    case 2:
+      return 'scissors'
+  }
 }
 
-function playRound(gamerChoice, computerChoice){
-    if(gamerChoice === computerChoice){
-        console.log("It's a tie!");
-    } else if (gamerChoice === "rock" && computerChoice === "paper"){
-        console.log("You loose! Paper beats rock");
-    } else if (gamerChoice === "rock" && computerChoice === "scissors"){
-        console.log("You win! Rock beats scissors");
-    } else if (gamerChoice === "paper" && computerChoice === "rock"){
-        console.log("You win! Paper beats rock");
-    } else if (gamerChoice === "paper" && computerChoice === "scissors"){
-        console.log("You loose! Scissors beats paper");
-    } else if (gamerChoice === "scissors" && computerChoice === "rock"){
-        console.log("You loose! Rock beats scissors");
-    } else if (gamerChoice === "scissors" && computerChoice === "paper"){
-        console.log("You win! Scissors beats paper");
-    }
-}
+function handleClick(playerSelection){
+        let computerSelection = getRandomChoice();
+        let result = playRound(playerSelection, computerSelection);
+        computerSelectionPar.textContent = "Computer chose " + computerSelection;
+        if(result === "tie"){
+            winnerPar.textContent = "It's a tie";
+        } else if(result === "win"){
+            winnerPar.textContent = "You win!";
+            playerWins++;
+            playerScorePar.textContent = playerWins;
+        } else if(result === "lose"){
+            winnerPar.textContent = "You lose!";
+            computerWins++;
+            computerScorePar.textContent = computerWins;
+        }
 
-function game(){
-    for(let i=0; i<5; i++){
-
+        if(playerWins === 3) {
+            computerScorePar.textContent = computerWins;
+            playerScorePar.textContent = playerWins;
+            winnerPar.textContent = "YOU WIN! You are the winner of the 3 rounds game, click to start again";
+            playerWins = 0;
+            computerWins = 0;
+            computerScorePar.textContent = computerWins;
+            playerScorePar.textContent = playerWins;
+        } else if(computerWins === 3) {
+            computerScorePar.textContent = computerWins;
+            playerScorePar.textContent = playerWins;
+            winnerPar.textContent = "COMPUTER WINS! It is the winner of the 3 rounds game, click to start again";
+            playerWins = 0;
+            computerWins = 0;
+            computerScorePar.textContent = computerWins;
+            playerScorePar.textContent = playerWins;
     }
 }

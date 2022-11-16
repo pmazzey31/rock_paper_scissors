@@ -15,12 +15,12 @@
     <div class="bigContainer">
         <h2>Think & make your choice</h2>
         <div class="gameChoiceContainer">
-            <input type="image" src="./images/rock.png" alt="rock">
-            <input type="image" src="./images/paper.png" alt="rock">
-            <input type="image" src="./images/scissors.png" alt="rock">
+            <input type="image" src="./images/rock.png" alt="rock" id="rockButton">
+            <input type="image" src="./images/paper.png" alt="paper" id="paperButton">
+            <input type="image" src="./images/scissors.png" alt="scissors" id="scissorsButton">
         </div>
-        <p class="computerSelecction">Computer is choosing...</p>
-        <p class="winner">The winner of this round is...</p>
+        <p class="computerSelection" id="computerSelection">Computer is choosing...</p>
+        <p class="winner" id="winner">The winner of this round is...</p>
         <h2>Game Score</h2>
         <table class="gameScore">
             <tr>
@@ -28,8 +28,8 @@
               <th>Computer</th>
             </tr>
             <tr>
-              <td class="playerScore">0</td>
-              <td class="computerScore">0</td>
+              <td class="playerScore" id="playerScore">0</td>
+              <td class="computerScore" id="computerScore">0</td>
             </tr>
         </table>
         <div class="github-user">
